@@ -28,7 +28,7 @@
     }
   ],
   "GlobalConfiguration": {
-    "BaseUrl": "https://localhost:7090"
+    "BaseUrl": "https://172.18.1.6:7090"
     //"BaseUrl": "https://wserp.piggis.com:7090"
   }
 }
