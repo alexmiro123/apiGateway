@@ -28,6 +28,6 @@
     }
   ],
   "GlobalConfiguration": {
-    "BaseUrl": "https://localhost:7091"
+    "BaseUrl": "https://localhost:7090"
   }
 }
