@@ -4,12 +4,16 @@
 
 # Build results
 bin/
+**/bin/
 obj/
+**/obj/
 [Bb]in/
 [Oo]bj/
 
+
 # Visual Studio
 .vs/
+**/.vs/
 *.user
 *.suo
 *.userosscache
