@@ -8,15 +8,18 @@
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
+          //"Host": "wserp.piggis.com",
           "Host": "localhost",
           "Port": 7040
         }
-      ]
+      ],
+      "AddHeadersToRequest": {
+        "Host": "wserp.piggis.com:7040"
+      }
     },
     {
-      "UpstreamPathTemplate": "/facturas/{everything}",
+      "UpstreamPathTemplate": "/reportes/{everything}",
       "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ],
-
       "DownstreamPathTemplate": "/api/{everything}",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
@@ -25,10 +28,28 @@
           "Port": 5001
         }
       ]
+    },
+    {
+      "UpstreamPathTemplate": "/documentos/{everything}",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ],
+      "DownstreamPathTemplate": "/api/v1/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "192.168.1.147",
+          "Port": 5002
+        }
+      ],
+      "QoSOptions": {
+        "ExceptionsAllowedBeforeBreaking": 3,
+        "DurationOfBreak": 300000,
+        "TimeoutValue": 300000 
+      }
     }
   ],
   "GlobalConfiguration": {
-    "BaseUrl": "https://172.18.1.6:7090"
-    //"BaseUrl": "https://wserp.piggis.com:7090"
+    "BaseUrl": "https://wserp.piggis.com:7090",
+    "RequestIdKey": "OcRequestId",
+    "Logging": { "LogLevel": "Debug" }
   }
 }

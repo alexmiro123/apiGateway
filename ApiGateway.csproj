@@ -10,6 +10,7 @@
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.20" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.OpenIdConnect" Version="8.0.20" />
     <PackageReference Include="Ocelot" Version="24.0.1" />
+    <PackageReference Include="Ocelot.Provider.Polly" Version="24.0.0" />
   </ItemGroup>
 
 </Project>
