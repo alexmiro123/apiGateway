@@ -8,14 +8,11 @@
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
-          //"Host": "wserp.piggis.com",
-          "Host": "localhost",
+          "Host": "wserp.piggis.com",
+          //"Host": "localhost",
           "Port": 7040
         }
-      ],
-      "AddHeadersToRequest": {
-        "Host": "wserp.piggis.com:7040"
-      }
+      ]
     },
     {
       "UpstreamPathTemplate": "/reportes/{everything}",
