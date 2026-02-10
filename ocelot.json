@@ -12,7 +12,12 @@
           //"Host": "localhost",
           "Port": 7040
         }
-      ]
+      ],
+      "QoSOptions": {
+        "ExceptionsAllowedBeforeBreaking": 3,
+        "DurationOfBreak": 300000,
+        "TimeoutValue": 300000
+      }
     },
     {
       "UpstreamPathTemplate": "/reportes/{everything}",
