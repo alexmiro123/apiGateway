@@ -40,22 +40,24 @@ builder.Services
 
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy("ERP", policy =>
+    options.AddPolicy("CorsPolicy", policy =>
     {
-        policy
-            .AllowAnyOrigin()
-            .AllowAnyHeader()
-            .AllowAnyMethod();
+        policy.AllowAnyHeader()
+              .AllowAnyMethod()
+              .SetIsOriginAllowed(_ => true)
+              .AllowCredentials();
     });
 });
 
 var app = builder.Build();
 
 
-app.UseCors("ERP");
+app.UseCors("CorsPolicy");
 
 app.UseAuthentication();
 app.UseAuthorization();
+
+app.UseWebSockets();
 
 await app.UseOcelot();
 app.Run();

@@ -20,6 +20,51 @@
       }
     },
     {
+      "UpstreamPathTemplate": "/talentohumano/{everything}",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ],
+
+      "DownstreamPathTemplate": "/{everything}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "wserp.piggis.com",
+          //"Host": "localhost",
+          "Port": 7041
+        }
+      ],
+      "QoSOptions": {
+        "ExceptionsAllowedBeforeBreaking": 3,
+        "DurationOfBreak": 300000,
+        "TimeoutValue": 300000
+      }
+    },
+    {
+      "UpstreamPathTemplate": "/notificaciones/{everything}",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ],
+      "DownstreamPathTemplate": "/{everything}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "wserp.piggis.com",
+          //"Host": "localhost",
+          "Port": 7042
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/notificacionHub/{everything}",
+      "UpstreamHttpMethod": [ "GET", "POST" ],
+      "DownstreamPathTemplate": "/notificacionHub/{everything}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "wserp.piggis.com",
+          //"Host": "localhost",
+          "Port": 7042
+        }
+      ]
+    },
+    {
       "UpstreamPathTemplate": "/reportes/{everything}",
       "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ],
       "DownstreamPathTemplate": "/api/{everything}",
@@ -45,7 +90,7 @@
       "QoSOptions": {
         "ExceptionsAllowedBeforeBreaking": 3,
         "DurationOfBreak": 300000,
-        "TimeoutValue": 300000 
+        "TimeoutValue": 300000
       }
     }
   ],
