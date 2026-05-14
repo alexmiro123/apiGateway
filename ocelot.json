@@ -5,11 +5,12 @@
       "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ],
 
       "DownstreamPathTemplate": "/{everything}",
-      "DownstreamScheme": "https",
+      "DownstreamScheme": "https", // para desarrollo es http
       "DownstreamHostAndPorts": [
         {
-          "Host": "wserp.piggis.com",
-          //"Host": "localhost",
+          "Host": "wserp.piggis.com", //produccion
+          //"Host": "192.168.1.144", // desarrollo
+          //"Host": "localhost", //local
           "Port": 7040
         }
       ],
@@ -28,6 +29,7 @@
       "DownstreamHostAndPorts": [
         {
           "Host": "wserp.piggis.com",
+          //"Host": "192.168.1.144", // desarrollo
           //"Host": "localhost",
           "Port": 7041
         }
@@ -39,27 +41,47 @@
       }
     },
     {
-      "UpstreamPathTemplate": "/notificaciones/{everything}",
+      "UpstreamPathTemplate": "/comercial/{everything}",
       "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ],
+
+      "DownstreamPathTemplate": "/{everything}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "rcomercialesws.piggis.com",
+          //"Host": "192.168.1.144", // desarrollo
+          //"Host": "localhost",
+          "Port": 7175
+        }
+      ],
+      "QoSOptions": {
+        "ExceptionsAllowedBeforeBreaking": 3,
+        "DurationOfBreak": 300000,
+        "TimeoutValue": 300000
+      }
+    },
+    {
+      "UpstreamPathTemplate": "/notificacionHub/{everything}",
+      "UpstreamHttpMethod": [ "GET", "POST" ],
       "DownstreamPathTemplate": "/{everything}",
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
           "Host": "wserp.piggis.com",
+          //"Host": "192.168.1.144",
           //"Host": "localhost",
           "Port": 7042
         }
       ]
     },
     {
-      "UpstreamPathTemplate": "/notificacionHub/{everything}",
+      "UpstreamPathTemplate": "/notificacionHubConexion",
       "UpstreamHttpMethod": [ "GET", "POST" ],
-      "DownstreamPathTemplate": "/notificacionHub/{everything}",
+      "DownstreamPathTemplate": "/notificacionHub",
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
           "Host": "wserp.piggis.com",
-          //"Host": "localhost",
           "Port": 7042
         }
       ]
@@ -84,6 +106,7 @@
       "DownstreamHostAndPorts": [
         {
           "Host": "192.168.1.147",
+          //"Host": "10.10.10.26",
           "Port": 5002
         }
       ],

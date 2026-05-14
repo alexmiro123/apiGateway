@@ -49,6 +49,16 @@ builder.Services.AddCors(options =>
     });
 });
 
+
+/*builder.Services
+    .AddHttpClient("Ocelot")
+    .ConfigurePrimaryHttpMessageHandler(() =>
+        new HttpClientHandler
+        {
+            ServerCertificateCustomValidationCallback =
+                HttpClientHandler.DangerousAcceptAnyServerCertificateValidator
+        });*/
+
 var app = builder.Build();
 
 
